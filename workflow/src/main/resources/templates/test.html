@@ -1,1 +1,14 @@
-<p>hello</p>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="EUC-KR">
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>hello brothers <span class="mx-2">ss</span></p>
+	<p th:text="${test.content}"></p>
+	<button class="btn btn-primary">Btn1</button>
+
+</body>
+</html>
