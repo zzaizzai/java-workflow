@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="EUC-KR">
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link th:href="@{/css/main.css}" rel="stylesheet">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="~{header}"></header>
+	<div class="container">
+		<p>register page <span class="mx-2"></span></p>
+		<form autocomplete="off" action="/account/register" method="post">
+			<div class="d-flex flex-column">
+
+				<input class="my-2 p-1" placeholder="Name" name="name"
+					th:value="${name}" required> <input class="my-2 p-1"
+					placeholder="ID" name="id" th:value="${id}" required> <input
+					class="my-2 p-1" placeholder="password" name="pw" th:value="${pw}"
+					required>
+
+			</div>
+			<button type="submit" class="btn btn-primary">Sign Up</button>
+		</form>
+
+		<p class="my-3" th:text="${msg}"></p>
+	</div>
+
+</body>
+</html>

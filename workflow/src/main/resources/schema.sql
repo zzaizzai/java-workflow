@@ -13,5 +13,6 @@ create table accounts
 id serial primary key,
 name text,
 login_id text,
-login_pw text
+login_pw text,
+is_admin boolean default false
 );
