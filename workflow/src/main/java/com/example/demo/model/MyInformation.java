@@ -13,15 +13,23 @@ public class MyInformation {
 	private String name;
 
 	private String loginId;
+	
+	private boolean isAdmin;
+	
+	private boolean isLoggedIn;
 
 	public void logout() {
 		this.name = null;
 		this.loginId = null;
+		this.isAdmin = false;
+		this.isLoggedIn = false;
 	}
 	
-	public void login(String loginId, String name) {
+	public void login(String loginId, String name, Boolean isAdmin) {
 		setLoginId(loginId);
 		setName(name);
+		setAdmin(isAdmin);
+		setLoggedIn(true);
 	}
 	
 }

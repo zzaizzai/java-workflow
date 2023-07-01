@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="EUC-KR">
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link th:href="@{/css/main.css}" rel="stylesheet">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="~{header}"></header>
+	<div class="container">
+		<div th:if="${@myInformation.isLoggedIn}">
+			<p th:text="${@myInformation}"></p>
+			<form action="/account/logout" method="post">
+				<button type="submit">Logout</button>
+			</form>
+		</div>
+		<div th:unless="${@myInformation.isLoggedIn}">
+		<p>Please Login</p>
+		<a class="btn btn-outline-primary">Login</a></div>
+
+	</div>
+
+</body>
+</html>

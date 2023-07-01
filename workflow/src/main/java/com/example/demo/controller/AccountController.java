@@ -29,13 +29,18 @@ public class AccountController {
 
 	@GetMapping("")
 	public String index() {
-		System.out.println("dd");
 		return "account/index";
 	}
 
 	@GetMapping("/register")
 	public String register() {
 		return "account/register";
+	}
+	
+	@GetMapping("/mypage")
+	public String mypage() {
+		
+		return "account/mypage";
 	}
 
 	@GetMapping("/login")
@@ -45,6 +50,8 @@ public class AccountController {
 
 	@PostMapping("/logout")
 	public String logout() {
+		
+		myInformation.logout();
 
 		return "account/login";
 	}
@@ -67,7 +74,7 @@ public class AccountController {
 
 		if (isSuccess) {
 			msg = "success!";
-			myInformation.login(account.getLoginId(), account.getName());
+			myInformation.login(account.getLoginId(), account.getName(), account.getIsAdmin());
 		}
 
 		model.addAttribute("id", id);

@@ -26,7 +26,7 @@ public class Account {
 	private String loginPw;
 	
 	@Column(name = "is_admin")
-	private Boolean isAdmin;
+	private Boolean isAdmin = false;
 	
 	
 
