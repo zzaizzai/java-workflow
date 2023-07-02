@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="EUC-KR">
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link th:href="@{/css/main.css}" rel="stylesheet">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="~{header}"></header>
+	<div class="container">
+
+		<form action="">
+			<div class="d-flex flex-column">
+				<input placeholder="title"> 
+				
+				<p>members</p>
+				<input th:each="order:${orderList}" th:value="${order}">
+			</div>
+			
+			<button>Done</button>
+		</form>
+	</div>
+
+</body>
+</html>
