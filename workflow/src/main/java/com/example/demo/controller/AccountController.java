@@ -63,9 +63,13 @@ public class AccountController {
 		Account account = accountRepository.findByLoginId(id);
 
 		String msg = "";
-		System.out.println(account);
+		model.addAttribute("id", id);
+		model.addAttribute("pw", pw);
+		
 		if (account == null) {
 			msg = "no account";
+			model.addAttribute("msg", msg);
+			return "account/login";
 		}
 
 		if (account.getLoginPw().equals(pw)) {
@@ -77,8 +81,7 @@ public class AccountController {
 			myInformation.login(account.getLoginId(), account.getName(), account.getIsAdmin());
 		}
 
-		model.addAttribute("id", id);
-		model.addAttribute("pw", pw);
+
 		model.addAttribute("msg", msg);
 
 		return "account/login";

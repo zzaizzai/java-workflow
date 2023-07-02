@@ -1,5 +1,13 @@
 drop table if exists accounts;
 drop table if exists test;
+drop table if exists departments;
+
+create table departments
+(
+id serial primary key
+
+);
+
 
 create table test
 (

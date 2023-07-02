@@ -14,7 +14,12 @@ public class TestController {
 	
 	@Autowired
 	TestRepository testRepository;
-
+	
+	@GetMapping("/")
+	public String home() {
+		return "home";
+	}
+	
 	@GetMapping("/test")
 	public String index(Model model) {
 		Test aa = testRepository.findById(1).get();
