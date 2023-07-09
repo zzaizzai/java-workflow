@@ -6,14 +6,17 @@
 		aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-		<div class="navbar-nav">
-			<a class="nav-link active" href="/account">accounts</a> <a
-				class="nav-link active" href="/account/mypage">mypage</a> 
-				<div class="mx-auto"></div>
-				<a class="nav-link active" href="/account/login">login</a>
-				<a class="nav-link active" href="/workflow">workflow</a>
-		</div>
+	<div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+		<ul class="navbar-nav">
+		<li class="nav-item"><a class="nav-link active" href="/account">accounts</a> </li>
+		<li class="nav-item"><a class="nav-link active" href="/workflow">workflow</a></li>	
+		</ul>
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a th:unless="${@myInformation.isLoggedIn}" class="nav-link active" href="/account/login">login</a>
+				<a th:if="${@myInformation.isLoggedIn}" class="nav-link active" href="/account/mypage">mypage</a> 
+			</li>
+		</ul>
 	</div>
 </nav>
 

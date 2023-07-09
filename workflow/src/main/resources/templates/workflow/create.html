@@ -11,12 +11,13 @@
 	<header th:replace="~{header}"></header>
 	<div class="container">
 
-		<form action="">
+		<form action="/workflow/create" method="post">
+		<input name="test" value="test">
 			<div class="d-flex flex-column">
 				<input placeholder="title"> 
 				
 				<p>members</p>
-				<input th:each="order:${orderList}" th:value="${order}">
+				<input th:each="order:${orderList}" th:value="${order}" th:name="|order${order}|">
 			</div>
 			
 			<button>Done</button>

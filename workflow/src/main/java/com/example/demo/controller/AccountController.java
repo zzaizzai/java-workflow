@@ -26,7 +26,7 @@ public class AccountController {
 
 	@Autowired
 	MyInformation myInformation;
-
+	
 	@GetMapping("")
 	public String index() {
 		return "account/index";
@@ -45,6 +45,11 @@ public class AccountController {
 
 	@GetMapping("/login")
 	public String login() {
+		if (myInformation.isLoggedIn()) {
+			
+			return "redirect:/account/mypage";
+		}
+		
 		return "account/login";
 	}
 
@@ -84,7 +89,7 @@ public class AccountController {
 
 		model.addAttribute("msg", msg);
 
-		return "account/login";
+		return "redirect:/account/mypage";
 	}
 
 	@PostMapping("/register")
