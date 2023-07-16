@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +31,19 @@ public class AccountController {
 	
 	@GetMapping("")
 	public String index() {
+		return "account/index";
+	}
+	
+	@GetMapping("/query")
+	public String queryTest() {
+		
+		List<Account>  accounts = accountRepository.findByidQuery();
+		Account  account = accountRepository.findByidQueryOne(1);
+		List<Account>  accountsNotAdmin = accountRepository.findByidQueryNotAdmin();
+		System.out.println(accounts);
+		System.out.println(account);
+		System.out.println(accountsNotAdmin);
+		
 		return "account/index";
 	}
 

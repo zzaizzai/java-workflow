@@ -15,12 +15,15 @@
 		<input name="test" value="test">
 			<div class="d-flex flex-column">
 				<input placeholder="title"> 
-				
+				<br>
 				<p>members</p>
-				<input th:each="order:${orderList}" th:value="${order}" th:name="|order${order}|">
+				<div th:each="order:${orderList}">
+					<input  th:value="|${order}|" th:name="|order,${order}|">
+					<input th:value="|${order}|" th:name="|id,${order}|">
+				</div>
 			</div>
-			
-			<button>Done</button>
+			<br>
+			<button class="btn btn-outline-primary">Done</button>
 		</form>
 	</div>
 

@@ -28,6 +28,4 @@ public class Account {
 	@Column(name = "is_admin")
 	private Boolean isAdmin = false;
 	
-	
-
 }
